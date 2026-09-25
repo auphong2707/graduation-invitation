@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      # No build step: copy the static files into dist/.
+      # Optionally fills Supabase settings from repository secrets
+      # and makes the social-preview image URL absolute.
+      - name: Assemble dist/
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          mkdir -p dist
+          cp index.html styles.css main.js config.js dist/
+          cp -r public dist/public
+          if [ -n "$SUPABASE_URL" ]; then
+            sed -i "s|supabaseUrl: \"[^\"]*\"|supabaseUrl: \"$SUPABASE_URL\"|" dist/config.js
+          fi
+          if [ -n "$SUPABASE_ANON_KEY" ]; then
+            sed -i "s|supabaseAnonKey: \"[^\"]*\"|supabaseAnonKey: \"$SUPABASE_ANON_KEY\"|" dist/config.js
+          fi
+          sed -i "s|content=\"public/og-image.jpg\"|content=\"$BASE_URL/public/og-image.jpg\"|" dist/index.html
+          ls -R dist
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

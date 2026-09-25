@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Âu Trung Phong — Thiệp mời Lễ Tốt nghiệp</title>
+  <meta name="description" content="Thiệp mời Lễ Tốt nghiệp · Âu Trung Phong · 27 · 09 · 2026 · 10:00 — 12:00 · Đại học Bách khoa Hà Nội">
+  <meta name="theme-color" content="#F7F1E8">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Âu Trung Phong — Thiệp mời Lễ Tốt nghiệp">
+  <meta property="og:description" content="27 · 09 · 2026 · 10:00 — 12:00 · Đại học Bách khoa Hà Nội">
+  <meta property="og:image" content="public/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Crect x='-50' y='-50' width='100' height='100' fill='%23F7F1E8'/%3E%3Cpath d='M0-40C3-13 13-3 40 0C13 3 3 13 0 40C-3 13-13 3-40 0C-13-3-3-13 0-40Z' fill='%23B3202A'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Roboto+Slab:wght@400..800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>document.documentElement.classList.add('js', 'is-locked');</script>
+  <script src="config.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- Shared shapes: a four-point star and a gear (teeth are drawn by main.js) -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="star" viewBox="-50 -50 100 100">
+      <path d="M0-50C4-15 15-4 50 0C15 4 4 15 0 50C-4 15-15 4-50 0C-15-4-4-15 0-50Z"/>
+    </symbol>
+    <symbol id="gear" viewBox="-100 -100 200 200">
+      <g fill="none" stroke="currentColor" stroke-width="1.25">
+        <path data-gear="24 84 96" vector-effect="non-scaling-stroke"/>
+        <circle r="68" vector-effect="non-scaling-stroke"/>
+        <circle r="20" vector-effect="non-scaling-stroke"/>
+        <circle r="8" vector-effect="non-scaling-stroke"/>
+        <circle cx="0" cy="-44" r="11" vector-effect="non-scaling-stroke"/>
+        <circle cx="38.1" cy="-22" r="11" vector-effect="non-scaling-stroke"/>
+        <circle cx="38.1" cy="22" r="11" vector-effect="non-scaling-stroke"/>
+        <circle cx="0" cy="44" r="11" vector-effect="non-scaling-stroke"/>
+        <circle cx="-38.1" cy="22" r="11" vector-effect="non-scaling-stroke"/>
+        <circle cx="-38.1" cy="-22" r="11" vector-effect="non-scaling-stroke"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- 1 · Opening — the date on three dials, geared together (the train is built by main.js).
+       Tap and the whole train winds up, then the invitation opens. -->
+  <button class="opener" type="button" aria-label="Chạm để mở thiệp mời">
+    <span class="opener__center">
+      <span class="opener__train" aria-hidden="true">
+        <span class="dial-label"><b data-bind="day">27</b><small>Ngày</small></span>
+        <span class="dial-label"><b data-bind="month">09</b><small>Tháng</small></span>
+        <span class="dial-label"><b data-bind="year">2026</b><small>Năm</small></span>
+      </span>
+      <span class="opener__hint">Chạm&nbsp;để&nbsp;mở</span>
+    </span>
+  </button>
+
+  <!-- 2 · Hero — the invitation card -->
+  <header class="hero">
+    <div class="frame card">
+      <div class="card__paper" aria-hidden="true"></div>
+      <svg class="frame__gear frame__gear--tr" aria-hidden="true"><use href="#gear"/></svg>
+      <svg class="frame__gear frame__gear--bl" aria-hidden="true"><use href="#gear"/></svg>
+      <svg class="corner corner--tl" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="corner corner--tr" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="corner corner--bl" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="corner corner--br" aria-hidden="true"><use href="#star"/></svg>
+
+      <div class="card__grid">
+        <p class="hero__invite" data-hero style="--d:.1s">Trân&nbsp;trọng kính&nbsp;mời bạn&nbsp;đến&nbsp;dự</p>
+        <h1 class="hero__title" data-hero style="--d:.2s">Lễ&nbsp;tốt&nbsp;nghiệp</h1>
+
+        <figure class="portrait" data-hero style="--d:.3s">
+          <svg class="portrait__gears" viewBox="-160 -160 320 320" aria-hidden="true">
+            <circle class="portrait__ring" r="108"/>
+            <g class="intro"><g class="spin">
+              <path class="portrait__gear" data-gear="48 117 125"/>
+            </g></g>
+            <g transform="translate(106.95 106.95)">
+              <g class="intro-rev"><g class="spin-rev4">
+                <path class="portrait__pinion" data-gear="12 26.25 34.25"/>
+                <circle class="portrait__hub" r="9"/>
+                <circle class="portrait__hub" r="3.5"/>
+              </g></g>
+            </g>
+            <use href="#star" class="twinkle" x="-128" y="-128" width="22" height="22" style="--d:1.1s"/>
+            <use href="#star" class="twinkle" x="122" y="-100" width="13" height="13" style="--d:1.25s"/>
+            <use href="#star" class="twinkle" x="-140" y="64" width="11" height="11" style="--d:1.4s"/>
+          </svg>
+          <span class="portrait__frame">
+            <span class="portrait__photo">
+              <span class="portrait__ph" data-bind="initials">ATP</span>
+            </span>
+          </span>
+        </figure>
+
+        <p class="hero__name" data-hero style="--d:.5s" data-bind="name">Âu Trung&nbsp;Phong</p>
+
+        <div class="hero__info" data-hero style="--d:.65s">
+          <p class="hero__date" data-bind="dots">27&nbsp;·&nbsp;09&nbsp;·&nbsp;2026</p>
+          <p class="hero__meta" data-bind="time">10:00&nbsp;—&nbsp;12:00</p>
+          <p class="hero__meta" data-bind="venue">Đại&nbsp;học Bách&nbsp;khoa Hà&nbsp;Nội</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sections share the invitation's language (double rule, stars, gears) in different forms;
+       the gear clusters on each seam (data-side) are built by main.js and turn with the scroll. -->
+  <div class="seam" data-side="right" aria-hidden="true"></div>
+
+  <main>
+    <!-- 3 · Event details — an open panel, ruled top and bottom -->
+    <section class="panel" id="details" aria-labelledby="details-title">
+      <div class="rule2" aria-hidden="true"><svg class="star" aria-hidden="true"><use href="#star"/></svg><span></span><svg class="star" aria-hidden="true"><use href="#star"/></svg></div>
+      <div class="panel__inner">
+        <p class="kicker" data-reveal><svg class="star" aria-hidden="true"><use href="#star"/></svg><span>01</span>Thông&nbsp;tin</p>
+        <div class="split">
+          <h2 class="section-title" id="details-title" data-reveal>Thông&nbsp;tin <em>buổi&nbsp;lễ</em></h2>
+          <div data-reveal style="--d:.1s">
+            <dl class="details">
+              <div class="details__row">
+                <dt>Ngày</dt>
+                <dd><span data-bind="date-long">27&nbsp;tháng&nbsp;9 năm&nbsp;2026</span><small data-bind="weekday">Chủ&nbsp;Nhật</small></dd>
+              </div>
+              <div class="details__row">
+                <dt>Thời&nbsp;gian</dt>
+                <dd><span data-bind="time">10:00&nbsp;—&nbsp;12:00</span><small>Giờ&nbsp;Việt&nbsp;Nam (<span data-bind="gmt">GMT+7</span>)</small></dd>
+              </div>
+              <div class="details__row">
+                <dt>Địa&nbsp;điểm</dt>
+                <dd data-bind="venue">Đại&nbsp;học Bách&nbsp;khoa Hà&nbsp;Nội</dd>
+              </div>
+              <div class="details__row">
+                <dt>Địa&nbsp;chỉ</dt>
+                <dd class="details__addr" data-bind="address">Số&nbsp;1&nbsp;Đại&nbsp;Cồ&nbsp;Việt, phường&nbsp;Bạch&nbsp;Mai, Hà&nbsp;Nội</dd>
+              </div>
+            </dl>
+            <a class="btn" data-map href="https://www.google.com/maps/search/?api=1&amp;query=%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20B%C3%A1ch%20khoa%20H%C3%A0%20N%E1%BB%99i" target="_blank" rel="noopener">Xem bản&nbsp;đồ <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="seam" data-side="left" aria-hidden="true"></div>
+
+    <!-- 4 · Countdown + 5 · Add to calendar — the red band -->
+    <section class="band" id="countdown" aria-labelledby="countdown-title">
+      <svg class="corner corner--tl" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="corner corner--tr" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="corner corner--bl" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="corner corner--br" aria-hidden="true"><use href="#star"/></svg>
+      <div class="clockwork" aria-hidden="true"></div>
+      <div class="band__inner">
+        <p class="kicker kicker--light" data-reveal><svg class="star" aria-hidden="true"><use href="#star"/></svg><span>02</span><span id="countdown-title">Đếm&nbsp;ngược</span></p>
+
+        <div class="countdown" role="timer" data-reveal>
+          <div class="cd"><span class="cd__num" data-cd="d">00</span><span class="cd__label">Ngày</span></div>
+          <svg class="cd__star" aria-hidden="true"><use href="#star"/></svg>
+          <div class="cd"><span class="cd__num" data-cd="h">00</span><span class="cd__label">Giờ</span></div>
+          <svg class="cd__star" aria-hidden="true"><use href="#star"/></svg>
+          <div class="cd"><span class="cd__num" data-cd="m">00</span><span class="cd__label">Phút</span></div>
+          <svg class="cd__star" aria-hidden="true"><use href="#star"/></svg>
+          <div class="cd"><span class="cd__num" data-cd="s">00</span><span class="cd__label">Giây</span></div>
+        </div>
+        <p class="cd__caption" data-reveal data-cd-caption></p>
+
+        <div class="cal" data-reveal>
+          <button class="btn btn--light" type="button" aria-expanded="false" aria-controls="cal-menu" data-cal-toggle>
+            Thêm vào&nbsp;lịch <span aria-hidden="true">+</span>
+          </button>
+          <div class="cal__menu" id="cal-menu" hidden>
+            <a class="cal__opt" data-cal-google href="#" target="_blank" rel="noopener">Google&nbsp;Lịch <span aria-hidden="true">↗</span></a>
+            <button class="cal__opt" type="button" data-cal-ics>Apple&nbsp;·&nbsp;Outlook (tệp&nbsp;.ics) <span aria-hidden="true">↓</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="seam" data-side="right" aria-hidden="true"></div>
+
+    <!-- 6 · Attendance — a reply card: smaller than the invitation, with a tear-off stub -->
+    <section class="reply-page" id="attendance" aria-labelledby="rsvp-title">
+      <div class="reply" data-reveal>
+        <svg class="corner corner--tl" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="corner corner--tr" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="corner corner--bl" aria-hidden="true"><use href="#star"/></svg>
+        <svg class="corner corner--br" aria-hidden="true"><use href="#star"/></svg>
+        <div class="reply__stub">
+          <p class="kicker"><svg class="star" aria-hidden="true"><use href="#star"/></svg><span>03</span>Tham&nbsp;dự</p>
+        </div>
+        <div class="reply__body">
+          <div class="reply__main">
+            <h2 class="rsvp__q" id="rsvp-title">Nếu&nbsp;bạn&nbsp;sẽ&nbsp;đến, để&nbsp;lại&nbsp;tên&nbsp;nhé.</h2>
+
+            <form class="rsvp" data-rsvp novalidate>
+              <label class="field__label" for="rsvp-name">Tên&nbsp;của&nbsp;bạn</label>
+              <div class="field">
+                <input id="rsvp-name" name="name" type="text" maxlength="80" required autocomplete="name" autocapitalize="words" enterkeyhint="send" spellcheck="false" placeholder="Ví dụ: Nguyễn Văn An">
+                <button class="send" type="submit">
+                  <svg class="send__gear" viewBox="-50 -50 100 100" aria-hidden="true">
+                    <g class="send__spin">
+                      <path class="send__teeth" data-gear="12 35 46"/>
+                      <circle class="send__hub" r="24"/>
+                      <use class="send__star" href="#star" x="-17" y="-17" width="34" height="34"/>
+                    </g>
+                  </svg>
+                  <span class="send__text">Xác&nbsp;nhận tham&nbsp;dự</span>
+                </button>
+              </div>
+              <p class="rsvp__status" role="status" aria-live="polite" data-rsvp-status></p>
+            </form>
+
+            <p class="thanks" hidden data-rsvp-thanks>Hẹn&nbsp;gặp&nbsp;bạn&nbsp;nhé, <em data-rsvp-name></em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+</html>
