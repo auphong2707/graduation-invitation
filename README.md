@@ -22,12 +22,12 @@ Chép ảnh vào `public/` với tên `profile.jpg`, `profile.png` hoặc `profi
 
 ## Deploy lên GitHub Pages
 
-1. Tạo repo trên GitHub, rồi đẩy thư mục này lên nhánh `main`:
+1. Tạo repo trên GitHub, rồi đẩy thư mục này lên nhánh `master`:
    ```bash
    git init && git add . && git commit -m "Graduation invitation"
-   git branch -M main
+   git branch -M master
    git remote add origin https://github.com/USERNAME/REPOSITORY.git
-   git push -u origin main
+   git push -u origin master
    ```
 2. Trên GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. Workflow `.github/workflows/deploy.yml` tự chạy; vài phút sau trang có ở
@@ -35,12 +35,12 @@ Chép ảnh vào `public/` với tên `profile.jpg`, `profile.png` hoặc `profi
 
 Mọi đường dẫn đều là tương đối, nên chạy đúng ở bất kỳ tên repo nào — không cần cấu hình `base`.
 
-> Cách đơn giản hơn nữa: bỏ qua workflow, chọn **Source: Deploy from a branch → main / (root)**. Khi đó hãy điền Supabase thẳng vào `config.js`.
+> Cách đơn giản hơn nữa: bỏ qua workflow, chọn **Source: Deploy from a branch → master / (root)**. Khi đó hãy điền Supabase thẳng vào `config.js`.
 
 ## Attendance (Supabase)
 
 1. Tạo project tại https://supabase.com → **SQL Editor** → chạy `supabase/schema.sql`.
-2. **Project Settings → API**: lấy *Project URL* và *anon / publishable key*.
+2. **Project Settings → API**: lấy *Project URL* (dạng `https://xxxx.supabase.co`) và *anon / publishable key*.
 3. Chọn một trong hai:
    - điền vào `config.js` (`supabaseUrl`, `supabaseAnonKey`) — key này vốn công khai; RLS chỉ cho phép thêm tên, không cho đọc; **hoặc**
    - thêm repository secrets `SUPABASE_URL` và `SUPABASE_ANON_KEY` (**Settings → Secrets and variables → Actions**); workflow sẽ điền vào lúc deploy.

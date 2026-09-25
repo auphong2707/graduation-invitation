@@ -550,7 +550,8 @@
   }
 
   function saveAttendance(name) {
-    var url = (att.supabaseUrl || '').replace(/\/+$/, '');
+    // Project URL, with or without a trailing /rest/v1 (people often paste the API URL)
+    var url = (att.supabaseUrl || '').trim().replace(/\/+$/, '').replace(/\/rest\/v1$/, '');
     var key = att.supabaseAnonKey || '';
     if (!url || !key) {
       console.warn('Attendance: Supabase is not configured in config.js — name was not stored.');
